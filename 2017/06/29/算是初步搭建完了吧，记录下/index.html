@@ -1,0 +1,809 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="用了大概一天左右时间(不算备案),算是初步把博客搭建起来了,也是蛮开心的。之前跟一些朋友讨论，现在建博客是不是晚了,因为看很多大牛都是学生时就建自己的博客了，我想说的是并不晚，有一句话很好:种树的最佳时间是25年前,仅次于它的最佳时间是现在。那么现在，我也来个手把手教你在Windowsxia 搭建博客哟，哈哈哈  要准备的: GitHub   (记住用户名和邮箱) 下载 Node.js和  Gi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一篇说下Hexo+Github搭建博客吧">
+<meta property="og:url" content="http://yoursite.com/2017/06/29/算是初步搭建完了吧，记录下/index.html">
+<meta property="og:site_name" content="分趣。">
+<meta property="og:description" content="用了大概一天左右时间(不算备案),算是初步把博客搭建起来了,也是蛮开心的。之前跟一些朋友讨论，现在建博客是不是晚了,因为看很多大牛都是学生时就建自己的博客了，我想说的是并不晚，有一句话很好:种树的最佳时间是25年前,仅次于它的最佳时间是现在。那么现在，我也来个手把手教你在Windowsxia 搭建博客哟，哈哈哈  要准备的: GitHub   (记住用户名和邮箱) 下载 Node.js和  Gi">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/right_left.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/r_s.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/git.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/git_2.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/node.png">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/hexo_github/npm.png">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/hexo_c.png">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/hexo_g.png">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/hexo_s.png">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/my_index.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/f.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/ss.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/config.png">
+<meta property="og:image" content="http://osedsttrd.bkt.clouddn.com/hexo_github/lan.png">
+<meta property="og:updated_time" content="2017-07-01T09:33:32.126Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第一篇说下Hexo+Github搭建博客吧">
+<meta name="twitter:description" content="用了大概一天左右时间(不算备案),算是初步把博客搭建起来了,也是蛮开心的。之前跟一些朋友讨论，现在建博客是不是晚了,因为看很多大牛都是学生时就建自己的博客了，我想说的是并不晚，有一句话很好:种树的最佳时间是25年前,仅次于它的最佳时间是现在。那么现在，我也来个手把手教你在Windowsxia 搭建博客哟，哈哈哈  要准备的: GitHub   (记住用户名和邮箱) 下载 Node.js和  Gi">
+<meta name="twitter:image" content="http://osedsttrd.bkt.clouddn.com/right_left.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/29/算是初步搭建完了吧，记录下/"/>
+
+
+
+
+
+  <title>第一篇说下Hexo+Github搭建博客吧 | 分趣。</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">分趣。</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A Share,More Fun</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About Me
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/算是初步搭建完了吧，记录下/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="子豪gg">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="分趣。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第一篇说下Hexo+Github搭建博客吧</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T17:55:24+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/06/29/算是初步搭建完了吧，记录下/" class="leancloud_visitors" data-flag-title="第一篇说下Hexo+Github搭建博客吧">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>用了大概一天左右时间(不算备案),算是初步把博客搭建起来了,也是蛮开心的。之前跟一些朋友讨论，现在建博客是不是晚了,因为看很多大牛都是学生时就建自己的博客了，我想说的是并不晚，有一句话很好:<strong>种树的最佳时间是25年前,仅次于它的最佳时间是现在</strong>。<br>那么现在，我也来个手把手教你在Windowsxia 搭建博客哟，哈哈哈</p>
+</blockquote>
+<h4 id="要准备的"><a href="#要准备的" class="headerlink" title="要准备的:"></a>要准备的:</h4><ol>
+<li><a href="https://github.com/" target="_blank" rel="external">GitHub</a>   (记住用户名和邮箱)</li>
+<li>下载 <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>和  <a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>  </li>
+<li>安装Hexo</li>
+</ol>
+<h4 id="要开始了"><a href="#要开始了" class="headerlink" title="要开始了"></a>要开始了</h4><ul>
+<li>Github搭建个人仓库</li>
+<li>安装Git</li>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+<li>观赏下我们的Hexo</li>
+<li>托管到Github</li>
+</ul>
+<h5 id="搭建个人仓库"><a href="#搭建个人仓库" class="headerlink" title="搭建个人仓库"></a>搭建个人仓库</h5><p> </p><p>注册-登录—点击右上角新建仓库<img src="http://osedsttrd.bkt.clouddn.com/right_left.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim" alt=""><br><br>填写Repository name 这里格式就填写自己的<strong>用户名.github.io</strong>这个之后就是你的访问域名了，创建成功页面如下:<br><br><img src="http://osedsttrd.bkt.clouddn.com/r_s.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim" alt=""><br>Ps:红色箭头的地址我们可以复制一下建个txt暂时存下,在配置hexo时我们会用到<br></p><p></p>
+<h5 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h5><p> Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。<br><br>将我们下载的Git安装，详细的可以参考<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰老师的Git教程</a>。安装完成之后我们cmd打开命令行,输入<strong>git</strong>看到如下图所示就是安装成功了<br><br><img src="http://osedsttrd.bkt.clouddn.com/git.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim" alt=""><br><br>安装成功后右击或者菜单里搜索会看见<strong>Git Bash</strong>。打开它，我们绑定github的用户名和邮箱,输入如下命令:<br><img src="http://osedsttrd.bkt.clouddn.com/git_2.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim" alt=""><br><strong>git config –global user.name “你的用户名”</strong><br><strong>git config –global user.email “你注册时的邮箱”</strong><br>都是英文分号<br></p>
+<h5 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h5><p> <a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">Node.js安装教程</a>很详细,安装完后我们打开命令行输入指令验证下,如下图所示:<br><br><strong>node –version</strong><br><br><img src="http://osedsttrd.bkt.clouddn.com/node.png" alt=""><br><br>成功的话可以看到Node.js的版本号<br></p>
+<h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h5><p>我们刚才安装了Node.js,这时候我们也同时安装了<a href="http://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="external">NPM</a>.<br><br>NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题.<br>输入如下命令行:<br><strong>npm -v</strong><br><br><img src="http://osedsttrd.bkt.clouddn.com/hexo_github/npm.png" alt=""><br><br>成功看到版本号<br><br><br>好了好了开始安装Hexo，新建一个你放博客的文件夹比如Blog,然后鼠标右击选择在此处打开命令行窗口,<br>输入以下命令<br><br><strong>npm install -g hexo-cli</strong><br><br>这里有个坑就是我知道这里安装会很慢但，等了半天还没反应，原来是需要我敲下回车，于是就继续进行了。</p>
+<h5 id="观赏下我们的Hexo"><a href="#观赏下我们的Hexo" class="headerlink" title="观赏下我们的Hexo"></a>观赏下我们的Hexo</h5><p>到这里马上就可以看到我们的小成果了<br><br>安装完成后我们要初始化我们的博客，输入如下命令行:<br><br><strong>hexo init blog</strong><br>（还是在这个文件夹下,右击选择在此处打开命令行）<br><br>初始化完成后，你会看见在你的文件夹下多了好多新的文件夹哈，会提示<br><strong>INFO Start blogging with Hexo!</strong>马上了，马上了我们就可以看见效果了,<br>输入命令行,如下图所示:<br><br><strong>hexo new my_blog</strong><br><br><strong>hexo g</strong><br><br><strong>hexo s</strong><br><br><img src="http://osedsttrd.bkt.clouddn.com/hexo_c.png" alt=""><br><img src="http://osedsttrd.bkt.clouddn.com/hexo_g.png" alt=""><br><img src="http://osedsttrd.bkt.clouddn.com/hexo_s.png" alt=""><br>明显可以看出让我们去访问这个地址哈，激不激动，激不激动？Go!<br><br>这是打开后的界面<br><img src="http://osedsttrd.bkt.clouddn.com/my_index.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim" alt=""><br><br>我的用的NextT主题，当然还有各种主题，大家的应该是默认landscape主题<br><br><img src="http://osedsttrd.bkt.clouddn.com/f.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim" alt=""><br><br><br>激动激动，惊不惊喜。当然了，还没有完全搞完哈</p>
+<h5 id="托管到Github"><a href="#托管到Github" class="headerlink" title="托管到Github"></a>托管到Github</h5><p>让更多的人看到你的博客,Github的影响力就不用说了，就冲免费，这服务也是很好的哈，开玩笑了哈。我们继续.<br><br>打开Git Bash输入如下命令<br><br><strong>ssh-keygen -t rsa -C “你当时注册github的邮箱”</strong><br>需要回车就回车然后最后会告诉你生成文件的路径,找到这个公钥文件(<strong>id_rsa.pub</strong>)，私钥自己留在电脑上，打开它，<span><del>解开它的扣子</del></span>哦不，打开它，全选复制所有内容。然后打开<a href="https://github.com/" target="_blank" rel="external">Github</a>进入你刚才创建的仓库，选择Settings然后选择左侧Deploy keys然后点击Add deploy key,看图：<br><br><img src="http://osedsttrd.bkt.clouddn.com/ss.png?imageView2/0/q/75|watermark/2/text/d3d3LnppaGFvZ2cuY29t/font/5a6L5L2T/fontsize/400/fill/I0ZDMDIzNQ==/dissolve/34/gravity/SouthEast/dx/10/dy/10|imageslim" alt=""><br><br>这个Title可以随便写，然后key填写你刚才复制的文件里的内容,最后点击Add key完成<br><br>好，我们回头修改下博客配置文件就差不多了，这里有一个知识点，我们的博客下有两个<span><strong>_config.yml</strong></span>文件，一个是最外层这个我们称作<span><strong>站点配置文件</strong></span>，另一个是theme主题下的我们称作<span><strong>主题配置文件</strong></span>。接下来我们修改<span><strong>站点配置文件</strong></span>，打开然后翻到最下面填写一些个配置，如下所示：<br><br><img src="http://osedsttrd.bkt.clouddn.com/config.png" alt=""><br><br>其中repo的值填写我们最刚开始让你复制保存的你的github仓库地址，如果没有保留就进入github复制你的仓库地址，最后加上<span><strong>.git</strong></span>即可，记住这中间都是有<span><strong>空格</strong></span>的，至于为什么就不做解释了，之后的markdown书写习惯都是这样的。这里还有个小坑，要配置下，否则我们的博客会出现乱码，翻到最上面，如图所示:<br><br><img src="http://osedsttrd.bkt.clouddn.com/hexo_github/lan.png" alt=""><br><br>设置下语言，然后我们保存的时候要保存成<span><strong>UTF-8格式</strong></span>,好了我们开始发布。<br>在<span><strong>blog目录下,shift+右击</strong></span>在此处打开命令行，输入如下命令:<br><br><br><strong>hexo clean</strong><br><strong>hexo g</strong><br><strong>hexo d</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="子豪gg" />
+          <p class="site-author-name" itemprop="name">子豪gg</p>
+           
+              <p class="site-description motion-element" itemprop="description">种树的最佳时间是25年前,仅次于它的最佳时间是现在</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#要准备的"><span class="nav-number">1.</span> <span class="nav-text">要准备的:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#要开始了"><span class="nav-number">2.</span> <span class="nav-text">要开始了</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#搭建个人仓库"><span class="nav-number">2.1.</span> <span class="nav-text">搭建个人仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Git"><span class="nav-number">2.2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.3.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#观赏下我们的Hexo"><span class="nav-number">2.5.</span> <span class="nav-text">观赏下我们的Hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#托管到Github"><span class="nav-number">2.6.</span> <span class="nav-text">托管到Github</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">子豪gg</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("CHXOxoImwAD4wTvW1bBAtMTM-gzGzoHsz", "dgskEY6rwRQ0fzv2OnCDEV2G");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
